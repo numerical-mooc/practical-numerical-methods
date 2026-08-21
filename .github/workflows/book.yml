@@ -40,6 +40,8 @@ jobs:
 
       - name: Build the book
         working-directory: book
+        env:
+          BASE_URL: /practical-numerical-methods
         run: npx --yes --package=mystmd@1.10.1 myst build --html
 
       - name: Upload the Pages artifact
