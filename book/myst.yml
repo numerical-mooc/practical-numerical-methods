@@ -1,0 +1,18 @@
+# See documentation at https://jupyterbook.org/stable/
+version: 1
+
+project:
+  id: d1d7c026-f353-47a8-ab26-2cebaca4d40f
+  title: Practical Numerical Methods
+  description: Engineering computation in the agentic era — 2026 edition
+  github: numerical-mooc/practical-numerical-methods
+  bibliography:
+    - references.bib
+  toc:
+    - file: index.md
+    - title: "Module 1: Phugoid motion"
+      children:
+        - file: modules/01-phugoid/01-theory.ipynb
+
+site:
+  template: book-theme
