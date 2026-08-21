@@ -86,6 +86,11 @@ This is the intended structure as the new edition grows; the directories will be
 
 The learner-facing book source—including the executable notebooks—will live in `book/`. The `docs/` directory will record the design and history of the new edition, while `src/` will contain only numerical code that has already been introduced transparently and is ready for reuse.
 
+## Previous edition
+
+> [!WARNING]
+> The [original Practical Numerical Methods with Python course](https://github.com/numerical-mooc/numerical-mooc) is preserved as an archive. Its software instructions and other time-sensitive material are outdated and should not be used as guidance for this edition.
+
 ## Licensing
 
 This repository uses separate licenses by material type:
