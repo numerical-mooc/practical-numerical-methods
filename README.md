@@ -1,5 +1,7 @@
 # Practical Numerical Methods
 
+**Engineering computation in the agentic era — 2026 edition**
+
 **Practical Numerical Methods** is a problem-driven, executable introduction to numerical methods for engineering and applied science, redesigned for the realities of computational work in 2026.
 
 The course develops numerical literacy through real models, transparent algorithms, computational experiments, and evidence of correctness. Jupyter notebooks are the canonical teaching narrative: each method first appears there in a readable, step-by-step implementation that learners can execute and examine. Once a method has been understood and needs to be reused, its stable implementation may graduate into a small, explicit Python module. Agent-enabled work is framed around specification, inspection, testing, verification, provenance, and engineering judgment.
