@@ -13,6 +13,7 @@ This is the intended structure as the new edition grows; the directories will be
 ```text
 .
 ├── README.md
+├── DECISIONS.md
 ├── AGENTS.md
 ├── CONTRIBUTING.md
 ├── CITATION.cff
@@ -24,16 +25,11 @@ This is the intended structure as the new edition grows; the directories will be
 ├── <canonical lock file>
 │
 ├── docs/
-│   ├── Decisions.md
+│   ├── Notebook-First-Code-Architecture.md
 │   ├── History.md
 │   ├── Teaching-Philosophy.md
 │   ├── Authoring-Workflow.md
-│   ├── Migration-Map.md
-│   └── decisions/
-│       ├── 0001-create-a-new-edition-repository.md
-│       ├── 0002-notebooks-are-canonical-exposition.md
-│       ├── 0003-graduate-code-into-modules-gradually.md
-│       └── 0004-use-jupyter-book-2.md
+│   └── Migration-Map.md
 │
 ├── book/
 │   ├── myst.yml
@@ -86,7 +82,7 @@ This is the intended structure as the new edition grows; the directories will be
         └── book.yml
 ```
 
-The learner-facing book source—including the executable notebooks—will live in `book/`. The `docs/` directory will record the design and history of the new edition, while `src/` will contain only numerical code that has already been introduced transparently and is ready for reuse.
+The learner-facing book source—including the executable notebooks—will live in `book/`. The root [`DECISIONS.md`](DECISIONS.md) records accepted course-design decisions, and the `docs/` directory holds fuller articulations and the history of the new edition. The `src/` directory will contain only numerical code that has already been introduced transparently and is ready for reuse.
 
 ## Previous edition
 
