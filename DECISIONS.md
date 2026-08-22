@@ -51,3 +51,50 @@ AI agents may assist at any layer, but their outputs will be treated as proposal
 ### Related articulation
 
 See [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md) for the progression within a topic, criteria for graduating code, and module-design guidance.
+
+## PNM-0002: Adopt a repeated derive–reconstruct–specify–audit–explain lesson cycle
+
+- **Status:** Accepted
+- **Date:** 2026-08-22
+- **Scope:** Lesson design, learner workflow, and agent-aware pedagogy
+
+### Context
+
+Executable notebooks can encourage passive “Run All” behavior if learners do not first develop an independent understanding of the model and algorithm. At the same time, coding agents make implementation inexpensive without making numerical judgment, verification, or engineering responsibility less important.
+
+The course needs a repeated practice that combines foundational mathematical work, active reconstruction, supervised agent use, and evidence-based conclusions.
+
+### Decision
+
+Every lesson will follow five stages:
+
+1. **Derive — On paper:** complete a short derivation, diagram, dimensional check, calculation, or prediction before computing.
+2. **Reconstruct — In your notebook:** use the published lesson as a worked reference while rebuilding its central computation in a learner-owned notebook. Limited copying of mechanical code is acceptable.
+3. **Specify — Before using an agent:** define a bounded task through its outcome, context, interface, constraints, permitted access, and acceptance evidence.
+4. **Audit — Review and verify:** inspect agent or library output and test it using appropriate mathematical, numerical, and physical evidence.
+5. **Explain — Your verdict:** state what is accepted, what evidence supports that decision, and what remains uncertain.
+
+Lessons will expose this rhythm through the signposts **On paper**, **In your notebook**, **With an agent**, and **Your verdict**. Each lesson will include one bounded agentic task emphasizing specification, review, or validation.
+
+Published notebooks remain the canonical executable exposition and must execute reliably, but they are reference artifacts rather than the learner’s primary working notebook.
+
+### Consequences
+
+- Authors must reserve lesson time for reconstruction, verification, and reflection rather than maximizing content coverage.
+- Every lesson needs a meaningful paper activity and an agent task grounded in its numerical subject.
+- Agent tasks should become less scaffolded as the course progresses.
+- Learners produce independent predictions, computational work, review evidence, and a defensible conclusion.
+- Course-practice guidance is introduced as core material; appendices provide just-in-time reference patterns.
+- Accessible alternatives and a no-paid-agent route must remain available.
+
+### Alternatives considered
+
+**Have learners execute the published notebooks directly.** Rejected as the default because it encourages recognition and execution without requiring reconstruction.
+
+**Teach agent use in a separate module.** Rejected because specification, review, and verification should become habits practiced with every numerical method.
+
+**Allow unstructured agent use.** Rejected because delegation without explicit requirements and acceptance evidence does not develop accountable engineering practice.
+
+### Related articulation
+
+See [Working through a lesson](book/course-practice.md), [Notebook workflow](book/appendices/notebook-workflow.md), [Verification patterns](book/appendices/verification-patterns.md), and [Working with agents](book/appendices/agent-use.md).
