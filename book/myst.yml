@@ -10,9 +10,15 @@ project:
     - references.bib
   toc:
     - file: index.md
+    - file: course-practice.md
     - title: "Module 1: Phugoid motion"
       children:
         - file: modules/01-phugoid/01-theory.ipynb
+    - title: Appendices
+      children:
+        - file: appendices/notebook-workflow.md
+        - file: appendices/verification-patterns.md
+        - file: appendices/agent-use.md
 
 site:
   template: book-theme
