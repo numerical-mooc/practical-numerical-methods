@@ -1,7 +1,7 @@
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 (notebook-workflow)=
 # Notebook workflow
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
 A notebook is both a computational scratchpad and a record of reasoning. Those roles pull in different directions at different moments, and that is useful.
 

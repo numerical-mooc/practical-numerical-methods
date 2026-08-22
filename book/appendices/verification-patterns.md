@@ -1,7 +1,7 @@
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 (verification-patterns)=
 # Verification patterns
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
 Verification asks whether the computation solves the equations as intended. No single check establishes correctness in every respect; combine patterns that expose different plausible failures. We will revisit these ideas in detail when each lesson needs them.
 

@@ -1,7 +1,7 @@
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 (agent-use)=
 # Working with agents
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
 An AI agent can implement code, inspect a diff, propose tests, search documentation, or investigate a discrepancy. Its speed is useful only when the task is clear enough to review and the result is checked independently. Treat agent output as a proposal; _you_ decide whether it is acceptable.
 

@@ -1,7 +1,7 @@
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 (course-practice)=
 # Working through a lesson
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
 Numerical methods become useful when you can move from a model to a computation you have reason to trust. In contemporary engineering, some code may be written by you, some may come from a scientific library, and some may be proposed by an AI agent. Whatever its source, you remain responsible for understanding what was computed and whether the result is fit for purpose.
 
