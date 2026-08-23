@@ -98,3 +98,48 @@ Published notebooks remain the canonical executable exposition and must execute 
 ### Related articulation
 
 See [Working through a lesson](book/course-practice.md), [Notebook workflow](book/appendices/notebook-workflow.md), [Verification patterns](book/appendices/verification-patterns.md), and [Working with agents](book/appendices/agent-use.md).
+
+## PNM-0003: Assess modules through lesson checkpoints and problem-based capstones
+
+- **Status:** Accepted
+- **Date:** 2026-08-23
+- **Scope:** Assessment architecture, module design, and instructor workflow
+
+### Context
+
+The legacy course ended each module with a memorable engineering coding assignment, but the surviving assessments primarily asked learners to implement a prescribed method and report expected numerical values or reproduce a target plot. Coding agents can now produce that artifact without demonstrating the numerical judgment the course intends to develop.
+
+Assessment only at the end of a module would also make it difficult to distinguish sustained reconstruction and reasoning from a polished artifact assembled shortly before submission. Conversely, assigning points to every lesson-stage artifact would create unnecessary grading work and shift attention from learning to point accumulation.
+
+### Decision
+
+Assessment will operate at two scales:
+
+1. **Lesson checkpoints** will sample designated handwritten work and learner-owned notebook evidence during a module. They will be marked `Complete` or `Revise` and will not receive separate points.
+2. **A problem-based capstone** will conclude each module. It will preserve the module's legacy engineering narrative while requiring a specification, inspectable computational artifact, audit, complementary verification evidence, lightweight provenance, and a defended engineering verdict.
+
+The instructor will review the lesson checkpoints and capstone together in a short individual checkout and assign one module grade on a 1-4 scale. The five module grades will be equally weighted. Revision may replace an earlier module grade within the stated window.
+
+The GW syllabus will remain outside the public Jupyter Book. The fuller capstone architecture will be maintained as instructor-facing documentation in `docs/`; learner-facing assignment briefs and rubrics will be added to their modules as the course is developed.
+
+### Consequences
+
+- Learners receive feedback before the capstone rather than only after completing it.
+- The capstone assesses supervision, verification, and defense without abandoning direct implementation where it supports understanding.
+- One module grade summarizes the learning process and capstone performance without point totals for every artifact.
+- The instructor must keep checkpoints and individual reviews brief and consistent.
+- Public design documentation must not contain hidden answers or controlled assessment material.
+
+### Alternatives considered
+
+**Migrate the legacy coding assignments unchanged.** Rejected because expected values and plots do not provide sufficient evidence of specification, review, verification, provenance, or understanding when code generation is inexpensive.
+
+**Assess only the finished capstone.** Rejected because it would not provide timely feedback or establish that the learner reconstructed and understood the central method during the module.
+
+**Grade every lesson artifact separately.** Rejected because it would create excessive bookkeeping and make low-stakes practice feel like a sequence of assignments.
+
+**Replace the module capstones with one large final project.** Rejected because repeated, problem-specific practice is more aligned with the five-module course journey and allows supervisory responsibility to grow gradually.
+
+### Related articulation
+
+See [Assessment and module-capstone design](docs/Assessment-and-Capstone-Design.md) and [Working through a lesson](book/course-practice.md).

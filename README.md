@@ -26,6 +26,7 @@ This is the intended structure as the new edition grows; the directories will be
 │
 ├── docs/
 │   ├── Notebook-First-Code-Architecture.md
+│   ├── Assessment-and-Capstone-Design.md
 │   ├── History.md
 │   ├── Teaching-Philosophy.md
 │   ├── Authoring-Workflow.md
@@ -34,9 +35,7 @@ This is the intended structure as the new edition grows; the directories will be
 ├── book/
 │   ├── myst.yml
 │   ├── index.md
-│   ├── syllabus.md
 │   ├── quickstart.md
-│   ├── assessment-policy.md
 │   ├── references.bib
 │   ├── modules/
 │   │   ├── 01-phugoid/
