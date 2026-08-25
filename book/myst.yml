@@ -22,3 +22,10 @@ project:
 
 site:
   template: book-theme
+  options:
+    logo: assets/lb-logo.png
+    logo_alt: Lorena A. Barba logo
+  parts:
+    footer: >-
+      (c) Lorena A. Barba (2026), [Creative Commons Attribution License
+      4.0](https://creativecommons.org/licenses/by/4.0/)
