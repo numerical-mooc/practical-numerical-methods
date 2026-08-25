@@ -210,6 +210,15 @@ html:not(.dark) .myst-search-bar:focus-visible {
   box-shadow: 0 0 0 1px var(--color-red-wash);
 }
 
+/* MyST calculates the fixed primary sidebar and the nested article grid
+ * independently. At desktop widths their visible edges can meet or overlap,
+ * so reserve a small gutter inside the sidebar without changing mobile nav. */
+@media (min-width: 1280px) {
+  .myst-primary-sidebar-nav {
+    padding-right: 0.75rem;
+  }
+}
+
 /* Table of contents: retain MyST's information architecture, translating only
  * its selected, hover, and focus treatments. */
 html:not(.dark) .myst-toc {
