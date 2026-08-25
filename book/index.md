@@ -54,7 +54,7 @@ The new edition is being rebuilt in public, one executable chapter at a time, fo
 4. **Spreading out:** explicit and implicit methods for diffusion, boundary conditions, two-dimensional problems, and reaction–diffusion patterns.
 5. **Relax and hold steady:** elliptic problems, iterative linear solvers, convergence, and computational performance.
 
-The first chapter begins with the physics of [phugoid motion](./modules/01-phugoid/01-theory.ipynb), derives an idealized model, and uses Lanchester's hand-constructed trajectories as a bridge to transparent scientific Python.
+The first chapter begins with the physics of [phugoid motion](./modules/01-phugoid/01-theory.ipynb), derives an idealized model, and uses Lanchester's hand-constructed trajectories as a bridge to transparent scientific Python. If Python or scientific Python is new to you, begin with [Python essentials for this course](./appendices/python-essentials.ipynb); it introduces the small set of language, NumPy, and plotting patterns used in that chapter.
 
 ## Open by design
 

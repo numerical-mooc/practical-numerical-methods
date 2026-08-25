@@ -18,6 +18,7 @@ project:
         - file: modules/01-phugoid/01-theory.ipynb
     - title: Appendices
       children:
+        - file: appendices/python-essentials.ipynb
         - file: appendices/notebook-workflow.md
         - file: appendices/verification-patterns.md
         - file: appendices/agent-use.md

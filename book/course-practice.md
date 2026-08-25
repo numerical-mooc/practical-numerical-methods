@@ -21,6 +21,8 @@ Treat the published lesson as a worked-out reference, not as a notebook you exec
 
 Reconstruction turns recognition—“this code makes sense when I read it”—into working understanding. Record predictions before running important cells, change one thing at a time when experimenting, and explain surprises. See the [notebook workflow](./appendices/notebook-workflow.md) for practical guidance.
 
+If Python is new rather than merely rusty, first work through [Python essentials for this course](./appendices/python-essentials.ipynb). Keep it open while reconstructing the first lesson; the goal is to recognize and make small changes to the recurring patterns, not to memorize the language before doing numerical work.
+
 (course-practice-specify)=
 ## Specify — Before using an agent
 

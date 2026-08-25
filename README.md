@@ -49,6 +49,7 @@ This is the intended structure as the new edition grows; the directories will be
 │   │   ├── 02-space-time/
 │   │   └── ...
 │   └── appendices/
+│       ├── python-essentials.ipynb
 │       ├── notebook-workflow.md
 │       ├── verification-patterns.md
 │       └── agent-use.md

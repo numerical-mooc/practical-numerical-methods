@@ -181,3 +181,46 @@ Brand color overrides will be scoped to light mode. Dark mode will retain MyST's
 ### Related articulation
 
 See [the brand adapter stylesheet](book/styles/brand.css) and the [`barba-brand` design specification](https://github.com/labarba/barba-brand).
+
+## PNM-0005: Add a just-in-time scientific-Python bridge for learners new to Python
+
+- **Status:** Accepted
+- **Date:** 2026-08-25
+- **Scope:** Learner prerequisites, appendices, and lesson scaffolding
+
+### Context
+
+The first class meeting showed a wider range of programming preparation than the course materials assumed. Some master's students have used Python but not NumPy or Matplotlib, while others have worked only with declarative web technologies such as HTML and CSS and have never written Python. The inline “Python refresher” notes in the phugoid lesson help a rusty reader recognize syntax, but they introduce functions, validation, collections, loops, arrays, and plotting too quickly to serve as a first programming experience.
+
+The course still needs to reach numerical modeling early. A full introductory-programming sequence before the first engineering problem would displace the problem-driven structure and ask experienced students to repeat material they already know.
+
+### Decision
+
+The book will include an executable appendix, **Python essentials for this course**, that assumes no previous Python and teaches the smallest coherent set of patterns needed by the first module. It will build from notebook execution and assignment through functions, conditions, collections, loops, NumPy arrays, numerical checks, and Matplotlib's object-oriented interface. A small straight-path tracer will combine those patterns before learners encounter the curved phugoid trajectory.
+
+The appendix will be a just-in-time bridge, not a comprehensive Python course or a gate that must be mastered before numerical work begins. Learners new to Python can work through it in sequence; learners with prior experience can use its readiness checklist and syntax map diagnostically. The phugoid lesson will retain its contextual reminders and link back to the appendix for reinforcement.
+
+New syntax should continue to be explained at first consequential use. The appendix should grow only when a language or scientific-Python pattern recurs across the course and cannot be understood from a brief local explanation.
+
+### Consequences
+
+- Learners with no Python background receive an executable path into the first lesson rather than a list of prerequisites.
+- Rusty and experienced learners can skip directly to the sections they need without delaying the class as a whole.
+- The bridge adds preparation time, but its examples rehearse the same computational patterns used in the phugoid tracer.
+- Inline reminders remain necessary because syntax is easier to retain when it is connected to the model being studied.
+- Authors must distinguish essential recurring patterns from incidental library features so the appendix does not expand into a second course.
+- Readiness means recognition, hand-tracing, and small deliberate edits with a reference nearby—not memorization or independent software design.
+
+### Alternatives considered
+
+**Continue to assume prior Python.** Rejected because the observed preparation does not support that prerequisite and would make the first numerical lesson inaccessible to part of the class.
+
+**Expand every lesson into a self-contained Python tutorial.** Rejected because repeated syntax instruction would obscure the numerical narrative and burden experienced learners.
+
+**Add a full Python bootcamp before Module 1.** Rejected because it would postpone the motivating engineering problem and cover substantially more language than the course immediately needs.
+
+**Refer learners only to an external Python tutorial.** Rejected because a general tutorial would not mirror the course's notation, notebook workflow, model checks, array usage, or plotting style.
+
+### Related articulation
+
+See [Python essentials for this course](book/appendices/python-essentials.ipynb), [Notebook workflow](book/appendices/notebook-workflow.md), and the [computational interlude in the phugoid lesson](book/modules/01-phugoid/01-theory.ipynb#computational-interlude-python-refresher).
