@@ -6,6 +6,8 @@ project:
   title: Practical Numerical Methods
   description: Engineering computation in the agentic era — 2026 edition
   github: numerical-mooc/practical-numerical-methods
+  static_files:
+    - assets/fonts
   bibliography:
     - references.bib
   toc:
@@ -25,6 +27,7 @@ site:
   options:
     logo: assets/lb-logo.png
     logo_alt: Lorena A. Barba logo
+    style: styles/brand.css
   parts:
     footer: >-
       (c) Lorena A. Barba (2026), [Creative Commons Attribution License
