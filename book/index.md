@@ -15,6 +15,8 @@ This course began in 2014 as an open, connected course taught across several uni
 
 The computational setting, however, has changed. Engineers now work not only by writing code directly, but also by using mature scientific libraries and directing AI agents that can implement, refactor, test, and optimize software. This 2026 edition is therefore more than a syntax update. It prepares you to **specify, delegate, inspect, test, verify, and communicate** computational work while remaining responsible for the engineering judgment behind it.
 
+In this book, a **coding agent** means an AI system that can use tools to inspect and act on a software workspace—not only answer questions in chat. See [What is a coding agent?](./appendices/agent-use.md#agent-definition) for a fuller description and examples.
+
 Code generation may be cheap; trustworthy numerical evidence is not. An agent can propose a solver, but it cannot relieve you of deciding whether the solver addresses the intended model, respects its physical constraints, converges as expected, or produces a result fit for purpose.
 
 ## What you will learn
