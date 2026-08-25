@@ -143,3 +143,41 @@ The GW syllabus will remain outside the public Jupyter Book. The fuller capstone
 ### Related articulation
 
 See [Assessment and module-capstone design](docs/Assessment-and-Capstone-Design.md) and [Working through a lesson](book/course-practice.md).
+
+## PNM-0004: Apply the Barba brand through a light-mode MyST adapter stylesheet
+
+- **Status:** Accepted
+- **Date:** 2026-08-24
+- **Scope:** Jupyter Book visual identity, typography, and theme maintenance
+
+### Context
+
+The course site should share the visual identity defined for Lorena A. Barba's 2026 web presence while retaining the navigation, accessibility features, and content components supplied by the MyST theme. The brand system defines a light palette and editorial typography but does not define a dark-mode palette. Copying the brand site's full stylesheet would also introduce layout rules that do not correspond to MyST's generated markup.
+
+### Decision
+
+The book will use a small adapter stylesheet at `book/styles/brand.css`. It will self-host Merriweather for headings and Source Sans 3 for body and interface text, map the brand tokens onto MyST's light-mode surfaces and navigation states, and leave MyST's syntax and semantic admonition colors in place.
+
+Brand color overrides will be scoped to light mode. Dark mode will retain MyST's existing color system while using the brand typefaces. Static content surfaces such as code blocks and previous/next navigation will be flat, with hairlines and restrained corner rounding. Admonitions may keep a subtle shadow because they are purposeful interruptions in the lesson rather than decorative cards.
+
+### Consequences
+
+- The visual identity is applied consistently to all generated pages without forking the MyST theme.
+- Font files are served with the book rather than relying on a third-party font service.
+- Dark mode remains usable even though the brand system does not yet specify dark colors.
+- MyST upgrades require a quick visual check because some adapter rules target theme component classes.
+- Typography is branded in both modes, while the dark color palette is intentionally MyST-native.
+
+### Alternatives considered
+
+**Import the brand site's complete stylesheet.** Rejected because its layout and component assumptions would conflict with MyST's generated interface.
+
+**Force the site to light mode.** Rejected because MyST's theme control is useful to readers and the brand does not yet provide an equivalent dark palette.
+
+**Fork the MyST theme.** Rejected because the current branding can be expressed through supported configuration and a focused stylesheet with much lower maintenance cost.
+
+**Remove all shadows and rounding.** Rejected because a slight shadow helps admonitions remain distinct without making ordinary content containers look decorative.
+
+### Related articulation
+
+See [the brand adapter stylesheet](book/styles/brand.css) and the [`barba-brand` design specification](https://github.com/labarba/barba-brand).
