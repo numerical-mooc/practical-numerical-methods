@@ -3,7 +3,7 @@ title: Practical Numerical Methods
 subtitle: Engineering computation in the agentic era — 2026 edition
 ---
 
-A problem-driven, executable introduction to numerical methods for engineering and applied science.
+> A problem-driven, executable introduction to numerical methods for engineering and applied science.
 
 Numerical methods turn mathematical models into computations that help us understand and design the physical world. But a computed answer is not automatically a trustworthy answer. We need to know what problem was solved, which assumptions entered the model, how numerical error affects the result, and what evidence supports our conclusions.
 
@@ -11,13 +11,16 @@ Numerical methods turn mathematical models into computations that help us unders
 
 ## A new edition for a new computational practice
 
-This course began in 2014 as an open, connected course taught across several universities and offered as a MOOC. Its distinctive strength was a problem-driven progression: begin with a physical model, derive a numerical method, implement it, study convergence and stability, and interpret the result. The aircraft, traffic-flow, diffusion, and elliptic-problem narratives of the [legacy course](https://github.com/numerical-mooc/numerical-mooc) remain the foundation of this edition.
+This material began in 2014 as an open, connected course taught across several universities and offered as a MOOC (Massive Open Online Course), which reached more than 11 thousand learners. Its distinctive strength was a problem-driven progression: begin with a physical model, derive a numerical method, implement it, study convergence and stability, and interpret the result. The aircraft stability, traffic-flow, diffusion, and elliptic-problem narratives of the [legacy course](https://github.com/numerical-mooc/numerical-mooc) remain the foundation of this edition.
 
-The computational setting, however, has changed. Engineers now work not only by writing code directly, but also by using mature scientific libraries and directing AI agents that can implement, refactor, test, and optimize software. This 2026 edition is therefore more than a syntax update. It prepares you to **specify, delegate, inspect, test, verify, and communicate** computational work while remaining responsible for the engineering judgment behind it.
+The computational setting, however, has changed. Engineers now work not only by writing code directly, but also by using mature scientific libraries and directing AI agents that can implement, refactor, test, and optimize software. This 2026 edition is therefore much more than a syntax update. It prepares you to **specify, delegate, inspect, test, verify, and communicate** computational work while remaining responsible for the engineering judgment behind it—whether or not you used an agent to code.
 
 In this book, a **coding agent** means an AI system that can use tools to inspect and act on a software workspace—not only answer questions in chat. See [What is a coding agent?](./appendices/agent-use.md#agent-definition) for a fuller description and examples.
 
+:::{important} 
+:class: simple
 Code generation may be cheap; trustworthy numerical evidence is not. An agent can propose a solver, but it cannot relieve you of deciding whether the solver addresses the intended model, respects its physical constraints, converges as expected, or produces a result fit for purpose.
+:::
 
 ## What you will learn
 
@@ -57,6 +60,12 @@ The new edition is being rebuilt in public, one executable chapter at a time, fo
 5. **Relax and hold steady:** elliptic problems, iterative linear solvers, convergence, and computational performance.
 
 The first chapter begins with the physics of [phugoid motion](./modules/01-phugoid/01-theory.ipynb), derives an idealized model, and uses Lanchester's hand-constructed trajectories as a bridge to transparent scientific Python. If Python or scientific Python is new to you, begin with [Python essentials for this course](./appendices/python-essentials.ipynb); it introduces the small set of language, NumPy, and plotting patterns used in that chapter.
+
+## Why "practical" in the title?
+
+A traditional numerical methods course covers the various discretization schemes, like a recipe book, and talk about the analysis of methods (consistency, stability, convergence). The teaching method is often via "chalk-and-talk" lectures. Sometimes there are homework problems that ask you to apply more analysis, and perhaps a final project where you finally get to program numerical solutions. And guess what, by that time, most of the semester is over and you're thrown in the deep end.
+
+We call this course **Practical Numerical Methods** because from the start you'll be learning to code numerical solutions, and you'll develop numerical literacy through guided practice. This doesn't mean we ignore the theory, but we discuss the theory when and as you experience the behavior of different solutions, and see the relevance.
 
 ## Open by design
 
