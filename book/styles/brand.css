@@ -187,22 +187,21 @@ html:not(.dark) article.article {
   --tw-prose-td-borders: var(--color-hairline);
 }
 
-html:not(.dark) article.article :where(a) {
+html:not(.dark) article.article :where(a, .link, .hover-link) {
   text-decoration-color: var(--color-red);
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.12em;
 }
 
 html:not(.dark) article.article :where(.link, .hover-link) {
   color: var(--color-red);
-  text-decoration-color: var(--color-red);
 }
 
 html:not(.dark) article.article :where(p, li, dd, figcaption, table, blockquote) a {
   color: var(--color-red);
 }
 
-html:not(.dark) article.article :where(a:hover, a:focus, a:active),
-html:not(.dark) article.article :where(.link:hover, .hover-link:hover) {
+html:not(.dark) article.article :is(a, .link, .hover-link):is(:hover, :focus, :active) {
   color: var(--color-red-deep);
   text-decoration-color: var(--color-red-deep);
 }
