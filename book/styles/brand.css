@@ -192,6 +192,11 @@ html:not(.dark) article.article :where(a) {
   text-underline-offset: 0.12em;
 }
 
+html:not(.dark) article.article :where(.link, .hover-link) {
+  color: var(--color-red);
+  text-decoration-color: var(--color-red);
+}
+
 html:not(.dark) article.article :where(p, li, dd, figcaption, table, blockquote) a {
   color: var(--color-red);
 }
