@@ -16,6 +16,7 @@ project:
     - title: "Module 1: Phugoid motion"
       children:
         - file: modules/01-phugoid/01-theory.ipynb
+        - file: modules/01-phugoid/02-oscillation.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
