@@ -76,6 +76,8 @@ Every lesson will follow five stages:
 
 Lessons will expose this rhythm through the signposts **On paper**, **In your notebook**, **With an agent**, and **Your verdict**. Each lesson will include one bounded agentic task emphasizing specification, review, or validation.
 
+Early lessons may supply a complete specification for learners to reconstruct and audit; later lessons will progressively transfer specification choices and responsibility to the learner.
+
 Published notebooks remain the canonical executable exposition and must execute reliably, but they are reference artifacts rather than the learner’s primary working notebook.
 
 ### Consequences
