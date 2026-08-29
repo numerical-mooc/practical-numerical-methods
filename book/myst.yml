@@ -17,6 +17,7 @@ project:
       children:
         - file: modules/01-phugoid/01-theory.ipynb
         - file: modules/01-phugoid/02-oscillation.ipynb
+        - file: modules/01-phugoid/03-full-model.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
