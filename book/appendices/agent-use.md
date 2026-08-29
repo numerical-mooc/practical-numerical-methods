@@ -3,7 +3,7 @@
 
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
-If you have used AI only by asking a question in a chat window and reading the answer, you already know the conversational part of working with an agent. The new part is that an agent may also **take actions with tools** in pursuit of a goal.
+If you have used AI by asking a question in a chat window and reading the answer, you already know the conversational part of working with an agent. The new part is that an agent may also **take actions with tools** in pursuit of a goal.
 
 (agent-definition)=
 ## What is a coding agent?
@@ -18,7 +18,7 @@ A **coding agent** is an AI system that combines a language model with instructi
 
 For example, a coding agent may read a notebook, locate the function that advances a numerical solution, edit that function, run the notebook or a test, inspect the failure, and revise the change. A chat answer can _suggest_ the same edit, but you normally have to transfer the suggestion into the notebook and run it yourself.
 
-The distinction is about capabilities and access, not the shape of the interface. You may control a coding agent through a chat window, and some chat assistants can use tools. Before using any AI system, ask: **What can it inspect? What actions can it take? What requires my approval?**
+The distinction is about capabilities and access, regardless of the shape of the interface. You may control a coding agent through a chat window, and some chat assistants can use tools. Before using any AI system, ask: **What can it inspect? What actions can it take? What requires my approval?**
 
 | In question-and-answer chat | In an agent task |
 | --- | --- |
@@ -45,6 +45,25 @@ For a first agent experience, choose work that is easy to inspect and reverse. A
 
 When you later permit edits, keep the scope narrow. Name the files the agent may change, ask to see the diff, and require a relevant check. Do not begin by handing an agent an entire project with the instruction to “improve it.”
 
+(agent-professional-conventions)=
+## Conventions emerging in professional practice
+
+Agentic coding is a new field, and its tools and interfaces are changing quickly. There is no single universal specification template. Nevertheless, guidance from several major AI providers converges on a recognizable practice: give an agent a clear, bounded outcome; supply the context and constraints that materially affect the work; define what evidence would count as success; control which actions and resources are permitted; and inspect the resulting changes and evidence before accepting them [@openai2026modelguidance; @anthropic2026claudecode; @github2026copilotagent].
+
+The same guidance also warns against unnecessary ceremony. Small, familiar tasks may need only a compact request and a known check, while uncertain or consequential work benefits from explicit exploration, planning, interfaces, and end-to-end verification. Longer instructions are not automatically better. The goal is the **minimum sufficient specification**: enough information to prevent consequential guessing and make success testable, avoiding detail that merely repeats context or dictates choices the agent can safely make.
+
+In professional code repositories, instructions and controls commonly live at different levels:
+
+| Layer | What belongs there |
+| --- | --- |
+| **Repository guidance** | Durable conventions such as build commands, coding standards, architecture, and review expectations. Files such as `AGENTS.md` or provider-specific instruction files can supply this context across tasks. |
+| **Task specification** | The outcome, local model context, task boundary, non-negotiable constraints, and acceptance evidence for one piece of work. This may live in a notebook, issue, or short specification document. |
+| **Invocation** | A brief request that identifies the task specification and authorizes the agent to act against it. It should not repeat the whole specification. |
+| **Permissions and isolation** | Tool settings, approval modes, sandboxes, or access rules that enforce which files, commands, networks, and external systems the agent can actually use. |
+| **Checks and review** | Executable tests and numerical evidence, followed by human inspection of the changes, results, limitations, and remaining risk. |
+
+This separation is important. Writing “do not edit files” states the intended boundary, but prompt text alone does not enforce it. When the interface provides permissions or a read-only mode, configure those controls as well. Conversely, granting a tool does not authorize every possible use of it: the task specification still defines which actions are in scope.
+
 (agent-task-specification)=
 ## Define the task by specification
 
@@ -53,6 +72,7 @@ A task specification is a testable description of the work to be done. It is not
 A useful specification states:
 
 - **Outcome:** what should exist or be learned when the task is complete;
+- **Scope:** which artifact or claim is under review or change, and what remains out of scope;
 - **Context:** the governing model, notation, units, conventions, and relevant existing work;
 - **Interface:** expected inputs, outputs, shapes, types, and error behavior;
 - **Constraints:** required or prohibited methods, dependencies, files, and side effects;
@@ -63,12 +83,40 @@ For example, “check my phugoid code” leaves the object and standard of revie
 
 You will not always know enough to write a complete specification immediately. State the unknowns and ask the agent to identify assumptions or ambiguities before it acts. Revise the specification as your understanding improves; do not silently let the agent choose consequential requirements for you.
 
+(agent-specification-proportionality)=
+### Use the minimum sufficient specification
+
+Treat the fields above as questions to consider, not as a form that must be reproduced for every request. A small, low-risk task can often be recorded under four compact headings:
+
+- **Goal and scope:** what should be produced or decided, and what artifact is involved;
+- **Non-negotiables:** only the model facts, interfaces, and constraints that would change the result;
+- **Allowed actions:** what the agent may inspect, change, run, or access; and
+- **Done when:** the checks, comparisons, or review evidence that would support acceptance.
+
+Use the fuller specification when the task spans several artifacts, involves an unfamiliar codebase, has consequential side effects, depends on subtle domain conventions, or needs multiple kinds of evidence. If you could describe the complete change and its check in one or two sentences, the compact form is usually enough.
+
+(agent-specification-mechanics)=
+## How specification-driven agent work proceeds
+
+The durable specification and the conversational prompt play different roles. A practical sequence is:
+
+1. **Establish independent expectations.** Before delegation, record any result, sign, invariant, special case, regression value, or failure mode that you can derive without the agent's proposal.
+2. **Resolve important unknowns.** If the task is not yet well defined, begin with a read-only exploration request. Ask the agent to locate relevant code, identify assumptions, or compare options; then revise the specification before authorizing implementation.
+3. **Record the task boundary.** Put the compact brief or full specification beside the computation or in another durable project artifact. Separate decisions you own from choices the agent may make.
+4. **Configure access.** Attach the intended files and choose permissions or isolation proportional to the task. Do not expose secrets, external systems, or costly resources without a clear need.
+5. **Invoke briefly.** Point the agent to the recorded specification instead of pasting a second, slightly different version into the conversation.
+6. **Let the permitted loop run.** Depending on the task, the agent may inspect, propose, edit, run checks, observe failures, and revise. A proposal-only activity stops before edits; a bounded implementation may include them.
+7. **Inspect evidence, not assurances.** Review the proposed code or diff, the commands actually run, and the resulting outputs. A statement that “all tests pass” is not a substitute for seeing what was tested.
+8. **Reach a human verdict.** Accept, revise, or reject the work; state what the evidence supports and what remains unverified; and leave a lightweight record of material agent contributions.
+
+Executable checks help an agent correct its own work, but they are not necessarily independent evidence. An agent can encode the same misunderstanding in both implementation and tests. In numerical computing, preserve hand calculations, exact or limiting cases, refinement behavior, conservation properties, or a separately produced reference whenever possible. Decide important acceptance evidence before seeing the proposal so that the standard does not drift toward whatever the agent happened to produce.
+
 (agent-task-types)=
 ## Three recurring task types
 
 - **Implementation:** ask the agent to produce a bounded component from a stated interface and acceptance criteria.
 - **Review:** ask the agent to compare existing work with a model, specification, or checklist and report concrete findings.
-- **Validation:** ask the agent to propose or implement checks for a numerical claim without treating its own tests as proof.
+- **Verification:** ask the agent to propose or implement checks for a numerical claim without treating its own tests as proof.
 
 Each type still requires human inspection and independent evidence. An agent may suggest additional acceptance criteria, but you decide which claims matter and whether the evidence is adequate.
 
