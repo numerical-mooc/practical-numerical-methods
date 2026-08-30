@@ -160,6 +160,17 @@ article.article :where(strong, b) {
   font-weight: 700;
 }
 
+/* KaTeX's default 1.21em scale is conspicuous beside Source Sans 3. Keep
+ * inline symbols close to the prose while retaining modest emphasis for
+ * displayed equations. */
+article.article .katex {
+  font-size: 1.1em;
+}
+
+article.article .katex-display > .katex {
+  font-size: 1.15em;
+}
+
 /* Full brand palette in light mode. Dark mode deliberately continues to use
  * MyST's accessible surface and semantic-color system. */
 html:not(.dark) body {
