@@ -40,9 +40,11 @@ The notebook checks the implementation using evidence appropriate to the problem
 
 ### 5. Graduate stable code into a course module
 
-When the implementation is understood and needed again, a tested version may move to `src/practical_numerical_methods/`. The transition should be explicit in the narrative: the notebook identifies what has moved, shows the small API, and demonstrates that the imported implementation reproduces the behavior already studied.
+When the implementation is understood and needed again, a tested version may move to `src/`. The transition should be explicit in the narrative: the notebook identifies what has moved, shows the small API, and demonstrates that the imported implementation reproduces the behavior already studied.
 
 The notebook should remain intelligible on its own. Depending on the learning objective, it may retain the original reference implementation, present a shortened version alongside the import, or link directly to the module source.
+
+Course modules are distributed as standalone `.py` files, not as an installable package. Students can download a file with `urllib.request.urlretrieve()` into their notebook's working directory and import it by its filename without the extension. The maintained source files live directly in `src/`, without a package subdirectory; students need neither that directory structure nor a repository checkout. Lessons explain that a new download overwrites the local copy and that importing downloaded code requires inspecting and trusting its source.
 
 ### 6. Connect to a scientific library
 
@@ -64,7 +66,7 @@ A notebook might first derive the update
 u^{n+1} = u^n + \Delta t\,f(u^n,t^n),
 \]
 
-then implement the time loop directly and display selected intermediate states. It may next define a local `euler_step` function, investigate error under time-step refinement, and compare with a known solution. When later lessons need Euler’s method as a baseline, a tested `integrate_euler` function can be imported from the course package. Finally, learners can compare it with a solver from `scipy.integrate`, relating the professional interface and error controls to ideas they already understand.
+then implement the time loop directly and display selected intermediate states. It may next define a local `euler_step` function, investigate error under time-step refinement, and compare with a known solution. When later lessons need Euler's method as a baseline, a tested `euler_step` function can be imported from a downloaded course module. Finally, learners can compare it with a solver from `scipy.integrate`, relating the professional interface and error controls to ideas they already understand.
 
 At no point does the import retroactively replace the readable derivation and reference implementation that made the method understandable.
 

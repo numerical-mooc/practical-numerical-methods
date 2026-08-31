@@ -26,7 +26,7 @@ The course will use three layers of computational material:
 2. **Small course modules** for stable, tested code that has already been taught transparently and now needs to be reused through a small explicit API.
 3. **Scientific libraries** for professional practice after learners understand enough of the method to choose, configure, and validate the library implementation.
 
-Code will graduate from a notebook into `src/practical_numerical_methods/` only when the move improves reuse or testing without introducing an unexplained conceptual gap. The originating notebook will remain understandable, and pedagogically useful reference implementations may remain even when a reusable module version exists.
+Code will graduate from a notebook into `src/` only when the move improves reuse or testing without introducing an unexplained conceptual gap. The originating notebook will remain understandable, and pedagogically useful reference implementations may remain even when a reusable module version exists.
 
 AI agents may assist at any layer, but their outputs will be treated as proposals. Learners remain responsible for specifying the task and producing evidence that the resulting computation is correct and appropriate.
 
@@ -37,7 +37,7 @@ AI agents may assist at any layer, but their outputs will be treated as proposal
 - Some code duplication is accepted when it serves understanding.
 - Course modules require focused tests and stable interfaces, adding maintenance work but improving reliability.
 - Authors must make code graduation visible in the narrative and avoid unexplained imports.
-- The `src/` package will grow slowly; this is intentional.
+- The collection of modules in `src/` will grow slowly; this is intentional.
 - Agent-aware outcomes can emphasize specification, inspection, verification, provenance, and judgment.
 
 ### Alternatives considered
@@ -47,6 +47,14 @@ AI agents may assist at any layer, but their outputs will be treated as proposal
 **Move numerical implementations into a package from the outset.** Rejected because it would hide important algorithmic work before learners had studied it and would make the notebooks less self-explanatory.
 
 **Teach primarily through scientific-library calls.** Rejected because API familiarity alone does not develop the numerical understanding needed to select methods, diagnose failures, or evaluate agent-produced work.
+
+### Implementation note: first reusable module (2026-08-30)
+
+Lesson 4 makes the first explicit transition to imported course code. The previously taught `rhs_full_phugoid()`, `euler_step()`, and `discrete_l1_difference()` functions live together in `src/phugoid.py`. Their original implementations remain visible in Lesson 3, and focused tests compare the module with mathematical examples and those notebook definitions. RK2 and leapfrog remain notebook-local while they are being introduced.
+
+Students download the standalone `phugoid.py` file with `urllib.request.urlretrieve()` into their notebook's working directory and use `from phugoid import ...`. Standalone source files live directly in `src/`, without a package subdirectory, and students do not need a repository checkout or an installed course package. The lesson explains saving definitions, downloading and importing the file, explicit function parameters, and restarting the kernel after edits. It also warns that downloading again overwrites the local file.
+
+This replaces the initially proposed editable-install setup: package installation and build configuration add concepts that are unnecessary for beginners at this stage. The course distributes reusable Python files directly, without `pyproject.toml`, an installation step, or PyPI publication. Broader solver abstractions are not part of this transition.
 
 ### Related articulation
 

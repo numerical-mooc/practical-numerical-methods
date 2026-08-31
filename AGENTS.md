@@ -7,7 +7,7 @@ This repository contains the 2026 edition of **Practical Numerical Methods: Engi
 ## Course architecture
 
 - Notebooks are the canonical executable exposition: learners should see the model, derivation, algorithm, experiments, verification, and interpretation.
-- Introduce numerical code transparently in a notebook before moving stable, reused logic into `src/practical_numerical_methods/`. Avoid imports that hide the method being taught.
+- Introduce numerical code transparently in a notebook before moving stable, reused logic into standalone `.py` files in `src/`. Avoid imports that hide the method being taught.
 - Treat scientific-library and AI-agent results as claims requiring inspection and evidence. Learners remain responsible for specifications, verification, provenance, and engineering judgment.
 - Follow `DECISIONS.md` and `docs/Notebook-First-Code-Architecture.md`. Record consequential new design choices in `DECISIONS.md` and elaborate them under `docs/` when useful.
 
