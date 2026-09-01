@@ -2,3 +2,4 @@
 _build/
 .DS_Store
 __pycache__/
+book/modules/01-phugoid/phugoid.py
