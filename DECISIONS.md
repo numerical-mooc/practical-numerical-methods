@@ -105,6 +105,12 @@ Published notebooks remain the canonical executable exposition and must execute 
 
 **Allow unstructured agent use.** Rejected because delegation without explicit requirements and acceptance evidence does not develop accountable engineering practice.
 
+### Implementation note: paper-airplane challenge in Lesson 4 (2026-08-31)
+
+The challenge compares computational work at a required numerical range accuracy, not runtime on an identical time grid. Stage 1 holds the existing 2 m release height and baseline launch fixed, compares Euler with explicit midpoint RK2, and uses the exact steady-glide range of 10 m as an event-calculation benchmark. The coursework range target is 1 cm, with a working 1 mm reference-uncertainty allowance supported by refinement evidence. Work is counted as right-hand-side evaluations through touchdown; reference-generation work is reported separately.
+
+The future launch investigation is bounded to speeds of 4–12 m/s and angles of −30° to 30°. These are pedagogical model-exercise bounds, not validated physical limits. The notebook currently supplies the challenge brief, midpoint and steady-glide preparation, and controlled-comparison requirements. Touchdown interpolation and failure-handling implementation remain for a separate revision, and the numerical range-accuracy exercise is explicitly gated on that work. The agent-supported search, its specification, and its rubric also remain deferred.
+
 ### Related articulation
 
 See [Working through a lesson](book/course-practice.md), [Notebook workflow](book/appendices/notebook-workflow.md), [Verification patterns](book/appendices/verification-patterns.md), and [Working with agents](book/appendices/agent-use.md).
