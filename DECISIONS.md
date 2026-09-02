@@ -88,6 +88,8 @@ Early lessons may supply a complete specification for learners to reconstruct an
 
 Published notebooks remain the canonical executable exposition and must execute reliably, but they are reference artifacts rather than the learner’s primary working notebook.
 
+Defensive numerical programming will follow the same progressive logic. When practical, a lesson will begin with a transparent direct implementation, expose a concrete failure, and then add the smallest validation needed to distinguish a usable outcome from a broken calculation. Production-level protections may be named as limitations when implementing them would obscure the numerical idea or overload an early learner.
+
 ### Consequences
 
 - Authors must reserve lesson time for reconstruction, verification, and reflection rather than maximizing content coverage.
@@ -95,7 +97,7 @@ Published notebooks remain the canonical executable exposition and must execute 
 - Agent tasks should become less scaffolded as the course progresses.
 - Learners produce independent predictions, computational work, review evidence, and a defensible conclusion.
 - Course-practice guidance is introduced as core material; appendices provide just-in-time reference patterns.
-- Accessible alternatives and a no-paid-agent route must remain available.
+- Agent-aware activities are part of the course design and need not be duplicated as no-agent alternatives; required institutional tools and access should be stated from the start.
 
 ### Alternatives considered
 
@@ -109,9 +111,9 @@ Published notebooks remain the canonical executable exposition and must execute 
 
 The challenge compares computational work at a required numerical range accuracy, not runtime on an identical time grid. Stage 1 holds the existing 2 m release height and baseline launch fixed, compares Euler with explicit midpoint RK2, and uses the exact steady-glide range of 10 m as an event-calculation benchmark. The coursework range target is 1 cm, with a working 1 mm reference-uncertainty allowance supported by refinement evidence. Work is counted as right-hand-side evaluations through touchdown; reference-generation work is reported separately.
 
-The launch investigation is bounded to speeds of 4–12 m/s and angles of −30° to 30°. These are pedagogical model-exercise bounds, not validated physical limits. The notebook separates fixed-time trajectory convergence from touchdown-range convergence and keeps the shared event logic visible for reconstruction. The evaluator stops at the first positive-to-nonpositive altitude bracket, interpolates touchdown time and range, reports touchdown, time-limit, and invalid-state outcomes, and counts right-hand-side evaluations. Euler and midpoint use exactly the same event treatment, verified against the 10 m steady-glide case at off-grid touchdown times.
+The launch investigation is bounded to speeds of 4–12 m/s and angles of −30° to 30°. These are pedagogical model-exercise bounds, not validated physical limits. The notebook separates fixed-time trajectory convergence from touchdown-range convergence and keeps the shared event logic visible for reconstruction. The evaluator stops at the first positive-to-nonpositive altitude bracket, interpolates touchdown time and range, reports touchdown, time-limit, and invalid-state outcomes, and counts accepted completed steps. For successful runs, right-hand-side evaluations follow as steps times stages; failed runs do not enter the work comparison. The lesson builds the evaluator from a direct loop whose silent failure on an invalid state motivates the validity check. Setup validation remains deliberately narrow rather than being tested exhaustively, and a stricter evaluator that inspects intermediate RK2 stages is named as a limitation rather than implemented. Euler and midpoint use exactly the same event treatment, verified against the 10 m steady-glide case at off-grid touchdown times.
 
-Stage 2 uses the university Jupyter AI surface as a bounded code-authoring assistant. A mostly supplied task brief allows the agent to inspect the learner's notebook and add unexecuted search and refinement cells, but not to run code, change existing cells, use external resources, select the final launch, or write the verdict. The learner records the Stage 1-supported search step and provenance, audits and executes each cell, retains multiple candidates, and examines time-step refinement separately from launch-grid refinement. A second bounded request adds an unexecuted candidate-specific Euler–RK2 comparison cell; the learner again audits, runs, and judges the evidence. The same numerical workflow is available without an agent. This preserves early-course responsibility for execution and interpretation while introducing direct, inspectable notebook editing by an agent.
+Stage 2 uses the university Jupyter AI surface as a bounded code-authoring assistant. A mostly supplied task brief allows the agent to inspect the learner's notebook and add unexecuted search and refinement cells, but not to run code, change existing cells, use external resources, select the final launch, or write the verdict. The learner records the Stage 1-supported search step and provenance, audits and executes each cell, retains multiple candidates, and examines time-step refinement separately from launch-grid refinement. A second bounded request adds an unexecuted candidate-specific Euler–RK2 comparison cell; the learner again audits, runs, and judges the evidence. This preserves early-course responsibility for execution and interpretation while introducing direct, inspectable notebook editing by an agent.
 
 ### Related articulation
 

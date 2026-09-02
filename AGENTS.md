@@ -15,6 +15,7 @@ This repository contains the 2026 edition of **Practical Numerical Methods: Engi
 
 - Jupyter Book 2/MyST sources live in `book/`; lesson notebooks and their figures live together under `book/modules/<module>/`.
 - Keep notebooks readable as chapters: interleave concise narrative with small code chunks, expose intermediate reasoning, and include reminders where learners with rusty Python may need them.
+- Introduce defensive checks progressively when teaching: when practical, first expose a concrete failure in a direct implementation, then add the smallest check that explains and prevents it. Name omitted production-level protections rather than obscuring the numerical method with them.
 - During development, keep committed notebooks free of cell outputs and execution counts. Adding final outputs is a deliberate later step.
 - Preserve notebook cell IDs and avoid unrelated notebook reserialization. Use triple single quotes (`'''`) for Python docstrings.
 - Use `book/references.bib` and MyST citations instead of handwritten reference lists. Narrative citation (part of the sentence) are entered without brackets: `@author`, not `[@author]`. The latter is for parenthetical citations only. 
