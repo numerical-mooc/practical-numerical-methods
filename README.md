@@ -43,7 +43,7 @@ This is the intended structure as the new edition grows; the directories will be
 │   │   │   ├── 01-theory.ipynb
 │   │   │   ├── 02-oscillation.ipynb
 │   │   │   ├── 03-full-model.ipynb
-│   │   │   ├── 04-second-order-methods.ipynb
+│   │   │   ├── 04-accuracy-cost-judgment.ipynb
 │   │   │   ├── rocket-assignment.ipynb
 │   │   │   └── figures/
 │   │   ├── 02-space-time/

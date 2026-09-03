@@ -18,7 +18,7 @@ project:
         - file: modules/01-phugoid/01-theory.ipynb
         - file: modules/01-phugoid/02-oscillation.ipynb
         - file: modules/01-phugoid/03-full-model.ipynb
-        - file: modules/01-phugoid/04-second-order-methods.ipynb
+        - file: modules/01-phugoid/04-accuracy-cost-judgment.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
