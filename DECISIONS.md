@@ -244,3 +244,47 @@ New syntax should continue to be explained at first consequential use. The appen
 ### Related articulation
 
 See [Python essentials for this course](book/appendices/python-essentials.ipynb), [Notebook workflow](book/appendices/notebook-workflow.md), and the [computational interlude in the phugoid lesson](book/modules/01-phugoid/01-theory.ipynb#computational-interlude-python-refresher).
+
+## PNM-0006: Introduce discrete conservation before the full conservation-law module
+
+- **Status:** Accepted
+- **Date:** 2026-09-04
+- **Scope:** Modules 2 and 3 sequencing, nonlinear convection, and agent-supported verification
+
+### Context
+
+The first convection lesson introduces the nonlinear equation in pointwise form, $u_t+u u_x=0$, and applies a backward spatial difference directly to $u u_x$. Its square-wave data contain discontinuities and develop a steep front. For smooth solutions, the chain rule makes this equation equivalent to the conservative form $u_t+(u^2/2)_x=0$, but the two forms lead to different discrete algorithms and the pointwise update does not enforce a discrete flux balance.
+
+The legacy course waits until Module 3 to recast the equation as a conservation law, in a lesson centered on control volumes and traffic flow. Leaving the issue entirely until then risks allowing learners to treat the pointwise calculation across a jump as trustworthy. Moving the complete conservation-law treatment into Module 2 would overload the introductory finite-difference lesson and weaken the traffic-flow narrative.
+
+### Decision
+
+Module 2 Lesson 1 will include a short bridge titled **Same Equations, Different Algorithms**. It will:
+
+- derive the conservative form from the chain rule under a smoothness assumption;
+- compare the pointwise and conservative forward-time, backward-space updates;
+- show the telescoping discrete flux balance;
+- have learners derive, implement, and independently check both step functions; and
+- use a bounded agent task to draft an unexecuted diagnostic harness comparing smooth and discontinuous data through constant-state checks, balance residuals, grid refinement, plots, and known-defect injection.
+
+The bridge will explicitly stop before control-volume derivations, weak solutions, Rankine–Hugoniot jump conditions, shock-speed calculations, general numerical fluxes, and the traffic-flow application. Those topics remain in Module 3.
+
+### Consequences
+
+- Learners encounter the danger of discretizing algebraically equivalent smooth forms before they are asked to trust a shock-like computation.
+- Discrete conservation becomes an inspectable numerical property rather than an unexplained replacement formula.
+- The agent activity delegates repetitive experimental code while keeping the algorithms, expectations, execution, audit, and verdict under learner control.
+- Module 3 can refer back to observed behavior and then supply the physical and mathematical framework that explains it.
+- The first convection lesson becomes longer, but the added work directly supports the course's verification and agent-supervision outcomes.
+
+### Alternatives considered
+
+**Leave the pointwise calculation unexplained until Module 3.** Rejected because the square-wave example already enters the regime where the distinction is consequential.
+
+**Silently replace the pointwise update with a conservative flux difference.** Rejected because learners would not see why the algebraic form changed or what property the new algorithm preserves.
+
+**Move the full conservation-law lesson into Module 2.** Rejected because control volumes, weak solutions, shock propagation, and traffic flow deserve their own development in Module 3.
+
+### Related articulation
+
+See [Module 2 Lesson 1](book/modules/02-spacetime/06-1d-convection.ipynb#same-equations-different-algorithms), [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md), and [Assessment and module-capstone design](docs/Assessment-and-Capstone-Design.md).

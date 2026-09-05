@@ -19,6 +19,9 @@ project:
         - file: modules/01-phugoid/02-oscillation.ipynb
         - file: modules/01-phugoid/03-full-model.ipynb
         - file: modules/01-phugoid/04-accuracy-cost-judgment.ipynb
+    - title: "Module 2: Space and time"
+      children:
+        - file: modules/02-spacetime/06-1d-convection.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
