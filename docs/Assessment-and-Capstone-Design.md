@@ -86,16 +86,18 @@ The capstones should not repeat the same generic prompt five times. Responsibili
 
 **Preserve.** Keep the force model, powered/coasting/falling regimes, event quantities, and physical interpretation. These make the task more valuable than a generic ODE exercise.
 
-**Revise.** The learner should first construct a transparent baseline integrator, then specify an alternative implementation or event-detection improvement for an agent. Reporting the legacy event values may remain a regression check, but it is not the assessed outcome.
+**Implemented design (2026).** In the [Rocket Flight Capstone](../book/modules/01-phugoid/05-rocket-capstone.ipynb), the learner reconstructs a transparent, time-aware midpoint-RK2 flight integrator from readable code supplied in the notebook. Euler is no longer a required capstone method: Lesson 4 has already established the accuracy-cost advantage of RK2. The learner then supervises two bounded agent contributions—code for the RK2 refinement study and a two-stage SciPy RK45 implementation—under recorded specifications, restricted editing authority, pre-run audits, and learner-owned interpretation. A short SciPy bridge supplies the unfamiliar library concepts before delegation. The public notebook labels its reflective prompts `Self-check`; an instructor may select evidence for offering-specific checkouts separately.
 
 **Minimum evidence.** Include:
 
 - a hand derivation of the state equations, sign convention, propellant history, and flight regimes;
 - dimensional and limiting-case checks, including exact propellant mass before burnout;
 - tests for nonnegative propellant, the sign of drag during ascent and descent, burnout handling, and ground crossing;
-- time-step refinement for apogee and impact quantities;
-- comparison with a second-order method or an independently configured library solver; and
-- a justified time step and event-interpolation rule for the claimed accuracy.
+- RK2 step refinement with observed-order checks and Richardson error estimates for all reported quantities;
+- a separately configured SciPy RK45 tolerance study that splits the integration at the known burnout discontinuity and uses root-finding events;
+- comparison of RK2 and SciPy results against quantity-specific numerical-error targets;
+- a conditional exact solution for the coast from each computed burnout state to apogee; and
+- justified RK2 step and SciPy tolerance choices, with computational work and remaining uncertainty reported.
 
 A useful adversarial case changes `v * abs(v)` to `v**2`, mishandles the transition at burnout, or reports the first negative altitude as the impact state without interpolation.
 

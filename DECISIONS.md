@@ -138,6 +138,8 @@ Assessment will operate at two scales:
 1. **Lesson checkpoints** will sample designated handwritten work and learner-owned notebook evidence during a module. They will be marked `Complete` or `Revise` and will not receive separate points.
 2. **A problem-based capstone** will conclude each module. It will preserve the module's legacy engineering narrative while requiring a specification, inspectable computational artifact, audit, complementary verification evidence, lightweight provenance, and a defended engineering verdict.
 
+The reusable public lessons label embedded reflective prompts as **Self-checks**. An instructor may designate a subset of that evidence for a `Complete`/`Revise` checkpoint in a particular course offering; those logistics do not need to be encoded in the public notebook itself (clarified 2026-09-09).
+
 The instructor will review the lesson checkpoints and capstone together in a short individual checkout and assign one module grade on a 1-4 scale. The five module grades will be equally weighted. Revision may replace an earlier module grade within the stated window.
 
 The GW syllabus will remain outside the public Jupyter Book. The fuller capstone architecture will be maintained as instructor-facing documentation in `docs/`; learner-facing assignment briefs and rubrics will be added to their modules as the course is developed.

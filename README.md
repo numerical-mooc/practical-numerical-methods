@@ -44,7 +44,7 @@ This is the intended structure as the new edition grows; the directories will be
 │   │   │   ├── 02-oscillation.ipynb
 │   │   │   ├── 03-full-model.ipynb
 │   │   │   ├── 04-accuracy-cost-judgment.ipynb
-│   │   │   ├── rocket-assignment.ipynb
+│   │   │   ├── 05-rocket-capstone.ipynb
 │   │   │   └── figures/
 │   │   ├── 02-space-time/
 │   │   └── ...
