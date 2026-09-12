@@ -290,3 +290,49 @@ The bridge will explicitly stop before control-volume derivations, weak solution
 ### Related articulation
 
 See [Module 2 Lesson 1](book/modules/02-spacetime/06-1d-convection.ipynb#same-equations-different-algorithms), [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md), and [Assessment and module-capstone design](docs/Assessment-and-Capstone-Design.md).
+
+## PNM-0007: Develop numerical judgment through focused investigations
+
+- **Status:** Accepted
+- **Date:** 2026-09-11
+- **Scope:** Teaching philosophy, lesson scope, and editorial review
+
+### Context
+
+A practical numerical-methods course needs mathematical rigor, but comprehensive topic coverage can obscure the question that makes the mathematics useful. Review of the Lesson 7 modernization proposal exposed this risk: multiple analytical tools and repeated experiments expanded the lesson without proportionately strengthening the conclusion learners needed. Modernization should deepen learners' reasoning and judgment without automatically expanding the collection of techniques taught.
+
+### Decision
+
+Organize each lesson around a concrete numerical question, grounded where possible in an unresolved observation from preceding work. Develop the mathematics, implementation, and evidence needed to answer that question rigorously. Reuse established code and experiments, and introduce additional analytical tools when they serve a distinct purpose.
+
+“Practical” means learners can explain a method's behavior, identify its assumptions, test its claims, and judge its accuracy and computational cost. Theory earns its place by enabling those judgments, including when it reveals limits that experiments alone cannot establish.
+
+Agent activities should serve the same investigation, with learners retaining responsibility for independent expectations, verification, and conclusions. Choose the form of the activity to suit the intellectual task.
+
+### Consequences
+
+- Authors must inspect the actual preceding lessons before planning new material, so that the investigation builds on the learner's current code, evidence, and unresolved questions.
+- Lesson review will assess the reasoning and evidence learners produce, rather than use topic count as a measure of substance. No fixed lesson length or single analytical approach is prescribed.
+- Additional proofs, schemes, and experiments need a distinct pedagogical purpose. Material deferred to later lessons or optional extensions must be placed deliberately so that necessary foundations remain available.
+- Focused lessons require coordination across the module: depth can accumulate through later applications instead of being completed within one chapter.
+- Keeping an investigation manageable must not weaken its claims or hide assumptions. Authors must distinguish what is derived, what is demonstrated for particular cases, and what remains unresolved.
+
+### Alternatives considered
+
+**Organize primarily around comprehensive topic coverage.** Rejected as the default because a sequence of techniques can displace the numerical question and leave insufficient room for reconstruction, verification, and judgment. Broader treatments remain appropriate when the investigation requires them.
+
+**Interpret “practical” as implementation with minimal theory.** Rejected because working code and plausible plots do not establish when a method is reliable. Learners need mathematical reasoning to predict behavior and assess the limits of computational evidence.
+
+**Control scope through a fixed length or rigid lesson template.** Rejected because different questions require different amounts and forms of development. Scope should follow the reasoning and evidence needed for a defensible conclusion.
+
+### Review questions for future lessons
+
+- What numerical question carries the lesson?
+- What prior work can learners use to investigate it?
+- What does each new concept enable them to explain, predict, or decide?
+- What evidence supports their conclusion, and what remains unresolved?
+- Is the lesson becoming deeper, or merely broader?
+
+### Related articulation
+
+PNM-0002 defines the learner's derive–reconstruct–specify–audit–explain cycle; this decision guides the selection and scope of the material within it. See also [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md).
