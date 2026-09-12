@@ -305,21 +305,21 @@ A practical numerical-methods course needs mathematical rigor, but comprehensive
 
 Organize each lesson around a concrete numerical question, grounded where possible in an unresolved observation from preceding work. Develop the mathematics, implementation, and evidence needed to answer that question rigorously. Reuse established code and experiments, and introduce additional analytical tools when they serve a distinct purpose.
 
-“Practical” means learners can explain a method's behavior, identify its assumptions, test its claims, and judge its accuracy and computational cost. Theory earns its place by enabling those judgments, including when it reveals limits that experiments alone cannot establish.
+“Practical” means learners can explain a method's behavior, identify its assumptions, test its claims, and judge its accuracy and computational cost. Theory is introduced when enabling those judgments, including when it reveals limits that experiments alone cannot establish.
 
 Agent activities should serve the same investigation, with learners retaining responsibility for independent expectations, verification, and conclusions. Choose the form of the activity to suit the intellectual task.
 
 ### Consequences
 
-- Authors must inspect the actual preceding lessons before planning new material, so that the investigation builds on the learner's current code, evidence, and unresolved questions.
-- Lesson review will assess the reasoning and evidence learners produce, rather than use topic count as a measure of substance. No fixed lesson length or single analytical approach is prescribed.
+- Always inspect the actual preceding lessons before planning new material, so that the investigation builds on the learner's current code, evidence, and unresolved questions.
+- Lesson review will assess the reasoning and evidence learners produce, avoiding bloat. No fixed lesson length or single analytical approach is prescribed.
 - Additional proofs, schemes, and experiments need a distinct pedagogical purpose. Material deferred to later lessons or optional extensions must be placed deliberately so that necessary foundations remain available.
 - Focused lessons require coordination across the module: depth can accumulate through later applications instead of being completed within one chapter.
 - Keeping an investigation manageable must not weaken its claims or hide assumptions. Authors must distinguish what is derived, what is demonstrated for particular cases, and what remains unresolved.
 
 ### Alternatives considered
 
-**Organize primarily around comprehensive topic coverage.** Rejected as the default because a sequence of techniques can displace the numerical question and leave insufficient room for reconstruction, verification, and judgment. Broader treatments remain appropriate when the investigation requires them.
+**Organize around comprehensive topic coverage.** Rejected as the default because a sequence of techniques can displace the numerical question and leave insufficient room for reconstruction, verification, and judgment. Broader treatments remain appropriate when the investigation requires them.
 
 **Interpret “practical” as implementation with minimal theory.** Rejected because working code and plausible plots do not establish when a method is reliable. Learners need mathematical reasoning to predict behavior and assess the limits of computational evidence.
 
