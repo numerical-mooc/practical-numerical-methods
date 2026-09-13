@@ -17,7 +17,7 @@ Sources inspected locally: all four legacy Module 2 notebooks and its README; th
 
 **Why did refining the spatial grid improve the Lesson 6 calculation, make it an exact grid shift at one setting, and then destroy it?**
 
-The lesson should answer that question rigorously and equip learners to audit a stability claim. Convex weights are the single analytical spine; direct substitution of an alternating perturbation establishes sharpness and supplies an independently calculable numerical prediction. CFL geometry gives a physical interpretation of the bound already established algebraically.
+The lesson should answer that question rigorously and equip learners to audit a stability claim. Convex weights are the single analytical spine; direct substitution of an alternating perturbation establishes sharpness and supplies an independently calculable numerical prediction. CFL geometry first extends the distance-per-step interpretation to information propagation and motivates the threshold. The convex-weight argument then establishes stability; geometry alone is not presented as a stability proof.
 
 Reuse Lesson 6's `advance_linear_convection(u0, c, dx, dt, num_steps)`, its `gaussian_profile()` when a smooth profile is needed, and its existing refinement evidence. The opening requires no new solver. The legacy plotting functions are not the numerical implementation for the new lesson; one appears later only as an explicitly identified audit specimen.
 
@@ -72,7 +72,15 @@ Recall the phugoid amplitude growth learners already observed. For forward Euler
 
 Limit the consistency/convergence discussion to three sentences: name consistency and stability, state their implication for convergence in the appropriate linear well-posed setting, and distinguish convergence from meeting an accuracy requirement on a particular grid.
 
-### 3. Why the bound is 0 <= C <= 1 — about 1,100 words
+### 3. Where does the information come from? — about 500 words
+
+After the perturbation study, extend the existing distance-per-step interpretation: trace the exact characteristic backward to `x_i-c*dt` and compare it with the two old values used by FTBS. Use the imported figure to locate the characteristic foot for `C=0.8, 1.0, 1.2`. Include equality in the containment condition.
+
+Trace repeated stencils to explain the numerical domain of dependence and why a fixed supercritical C leaves a mismatch under refinement over a fixed physical interval. State the interior-domain assumption and the role of prescribed inflow data. Relate this reasoning to the observation region needed later for the alternating perturbation.
+
+Present geometric containment as necessary for convergence of the relevant explicit transport schemes, not sufficient proof of stability. End by asking how the update weights combine the available information, leading directly to the convex-weight argument.
+
+### 4. Why the bound is 0 <= C <= 1 — about 1,100 words
 
 For positive constant speed, rewrite the update:
 
@@ -108,13 +116,7 @@ An optional **Going further** dropdown may state
 
 for a Fourier mode on an infinite or periodic constant-coefficient grid, briefly defining theta as the phase increment per grid cell. No main argument or required exercise depends on this result.
 
-### 4. The physical picture—and its limit — about 500 words
-
-Use the imported CFL figure after the algebraic argument. Trace the physical backward characteristic and explain containment in the numerical domain of dependence. Connect this picture to the uncontaminated measurement region above.
-
-Explain CFL containment as a necessary condition for convergence of the relevant explicit hyperbolic schemes, not a universal sufficient stability test. Show the forward-time/centered-space update's weights `(C/2, 1, -C/2)` and one compact run at `C=0.5` that demonstrates growth despite geometric containment. Specify initial data, boundaries, observation interval, and measured quantity; verify the counterexample during authoring. Do not use the alternating mode for this contrast: centered differencing annihilates that mode. Choose data that excite growth, and account for influence from both boundaries if using a finite-domain interior measurement.
-
-Negative weights invalidate the convexity proof; the observed growing solution is separate evidence. Keep this a short counterexample, avoiding a second Fourier derivation or full second-solver lesson.
+A short counterexample can follow the weight argument: show the forward-time/centered-space weights `(C/2, 1, -C/2)` and one compact run at `C=0.5` exhibiting growth despite geometric containment. Specify data, boundaries, and observation interval. The alternating mode cannot diagnose this example because centered differencing annihilates it. Negative weights invalidate the convexity proof; the growing run supplies separate evidence. Keep this contrast brief, without a second Fourier derivation or full solver lesson.
 
 ### 5. Living within the bound — about 650 words
 
