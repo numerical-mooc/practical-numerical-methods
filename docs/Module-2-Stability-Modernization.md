@@ -140,7 +140,9 @@ Explain briefly that negative speed needs forward spatial differencing and a rig
 
 Assume work proportional to points times steps; this is an operation-count scaling, not a promised wall-clock ratio. Connect it to Module 1's accuracy-versus-cost judgment. State the leading numerical-diffusion coefficient `c*dx*(1-C)/2` for smooth solutions in one sentence to explain sharpening toward `C=1`; defer its derivation to diffusion.
 
-### 6. Audit a stability claim — V1: REJECTED
+### 6. Agent-driven activity
+
+#### Audit a stability claim — V1: REJECTED
 
 The object under audit is the legacy assertion:
 
@@ -165,6 +167,25 @@ Present `linear_convection_cfl()` only as a clearly marked historical audit spec
 **Audit and execute.** Inspect time-level use, step counts, perturbation construction, measurement region, and normalization before running. Compare measured amplification with `|1-2C|^n`. Reuse the unit-Courant shift and the short FTCS example. Check the zero- and negative-speed hypotheses by inspecting or safely evaluating the time-step calculation; do not require a full signed-speed solver. Bound additional agent suggestions rather than implementing every proposed test. A constant state alone cannot expose this instability, so learners must explain why the chosen perturbation matters.
 
 **Your verdict.** Replace “always stable” with a qualified statement naming the PDE, positive speed, space-time discretization, Courant interval, and boundary assumptions. Distinguish stability, input validity, fair comparisons, and accuracy. Record which agent hypotheses were accepted, revised, or rejected and why, together with a concise provenance record. Use self-checks rather than expanding this into another long harness assignment.
+
+#### V2 - ALSO REJECTED
+
+(Proposal from Codex when challenged on V1: the historical framing adds nothing learners need. Bringing back the discarded function also creates unnecessary code to inspect. `AGENTS.md` states that when agreed changes drop a passage or code solution, no mention of the abandoned material should remain in the notebook. Reimporting `linear_convection_cfl()` to audit it would have violated a recorded convention)
+
+**Commission and audit a time-step recommendation for their current solver.**
+The scenario: You want to refine the transport calculation. Ask an agent to recommend how to choose the time step and explain what its recommendation guarantees.
+
+(Long description discarded.)
+
+(Claude on Opus 5 consumed the long description, agreed, and gave a series of fixes. Despite them, the plan was rejected.)
+
+**Notes**
+
+1. The original proposal for an agent-driven activity was rejected because it was auditing a statement from the legacy lesson and a version of the function from the legacy version of the course (which we did not want to resuscitate or present to the learner). 
+2. A second option for the activity would ask learners to "commission and audit a time-step recommendation for their current solver. The learner asks an agent to recommend how to choose the time step and explain what its recommendation guarantees. This seems over-engineered, given that we've just established simple bounds for the current number. 
+3. The real question is how to architect a function that checks input validity like we did in the example from the phugoid module, in Lesson 4. There, we started with a direct loop, then showed a silent wrong answer, and justified the need for checks built into the code. Then, increasingly, we developed a defensive design for the integrator. How would that process of turning our simple function to advance the linear advection become a more defensive solver with the appropriate checks, including for stability?  Automatic time-step selection could be built-in (rather than just giving the user "advice"). Perhaps it could even decide to use upwind in space each time, depending on the sign of c. 
+4. With this input in Codex (Astra) the recommendation was closer to acceptable, but still unsatisfactory. Called it **“Make the solver enforce its assumptions.”** But it wanted to leave the function interface unchanged, and defer automatic time-step selection and final-time handling.
+5. What I really want to demonstrate with this agent activity is how one can use the support of agents to turn an understood algorithm into a piece of code that contains the necessary validation tests or internal tests to be robust. Often in numerical computing, engineers craft minimalistic code that lacks defensive checks. On the one hand, they have not been trained as software engineers, and on the other hand, these are investments that they might not see the return on immediately. Writing tests is time-consuming. Using an agent changes the calculus. You can immediately raise the quality of the code while the numerical method and relevant theory are fresh in your mind, at low time investments because an agent drafts them.
 
 ### 7. What comes next — about 200 words
 
