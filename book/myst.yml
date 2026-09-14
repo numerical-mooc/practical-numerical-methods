@@ -23,6 +23,7 @@ project:
     - title: "Module 2: Space and time"
       children:
         - file: modules/02-spacetime/06-1d-convection.ipynb
+        - file: modules/02-spacetime/07-cfl-condition.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
