@@ -36,9 +36,9 @@ By working through the course, you will learn to:
 
 ## How the course works
 
-Jupyter notebooks are the executable chapters of this book. Each notebook interleaves the model, mathematical reasoning, implementation, experiments, verification, and interpretation. Important algorithms appear transparently in the notebook before stable, reused code moves into a small course module. Scientific-library and agent-produced results are treated as claims to investigate, not authorities to accept.
+Jupyter notebooks are the executable chapters of this book. Each notebook interleaves the model, mathematical reasoning, implementation, experiments, verification, and interpretation. Important algorithms appear transparently in the notebook before stable, reused code moves into small course modules. Scientific-library and agent-produced results are treated as claims to investigate, not authorities to accept.
 
-Each module follows a recurring practice:
+Each lesson follows a recurring practice:
 
 1. **Model** the physical or engineering system.
 2. **Specify** what the computation must do and how success will be judged.

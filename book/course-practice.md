@@ -26,7 +26,7 @@ If Python is new rather than merely rusty, first work through [Python essentials
 (course-practice-specify)=
 ## Specify — Before using an agent
 
-Give an agent a bounded task rather than a vague request for help. State the intended outcome, relevant model and conventions, inputs and outputs, constraints, permitted access, and evidence that would count as success.
+Give an agent a bounded task rather than a vague request for help. State the intended outcome, relevant mathematical model and conventions, inputs and outputs, constraints, permitted access, and evidence that would count as success.
 
 A specification makes delegation useful because it gives both you and the agent something concrete to work against. It need not be perfect on the first attempt; unresolved questions and assumptions should be made explicit and revised as you learn. The [agent-use guide](./appendices/agent-use.md) provides a template and examples.
 
@@ -42,4 +42,4 @@ The strongest evidence usually combines complementary checks: perhaps an analyti
 
 Close the lesson by stating what you accept, what evidence supports that decision, and what remains uncertain. Record material agent suggestions that you accepted, rejected, or corrected. “The code ran” and “the tests passed” are observations; your job is to explain what those observations allow you to claim.
 
-By repeating this practice, you will become faster at turning mathematical understanding into reliable computational work, and better at recognizing when a polished result has not yet earned your trust.
+By repeating this practice, you will become faster and more effective at turning mathematical understanding into reliable computational work, and better at recognizing when a polished result has not yet earned your trust. Like in verything, you will get better with practice. That is what the agent-driven activities in each lesson are meant to provide.
