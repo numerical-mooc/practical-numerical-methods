@@ -333,6 +333,21 @@ Agent activities should serve the same investigation, with learners retaining re
 - What evidence supports their conclusion, and what remains unresolved?
 - Is the lesson becoming deeper, or merely broader?
 
+### Implementation note: reuse established work and select evidence by purpose (2026-09-19)
+
+Editorial revision of Lesson 8 made the focused-investigation principle concrete. A single notebook-local `advance_diffusion()` function now serves the square pulse, sine-profile comparison, and refinement study. A final-amplitude and decay-rate table answers whether diffusion is too fast or too slow without storing or plotting an amplitude history. The maximum error supplies the refinement measure, and the error-versus-work plot supports the choice of a calculation meeting an accuracy target. These outputs have distinct jobs.
+
+Apply the following guidance when drafting and revising lessons:
+
+- **Define the numerical method once, then reuse it.** When learners already know the function pattern, the first implementation of a new update may be a small notebook-local function with explicit parameters and its full body visible beside the derivation. A separate inline implementation followed by a refactoring is not required in every lesson. Repeated calls with different data let learners see what changes in an experiment while the algorithm stays fixed. This implements PNM-0001 without requiring graduation to `src/`.
+- **Advance the investigation at each section.** Build on established definitions, parameters, and results. Reuse unchanged setup within the notebook and make changed inputs explicit. Remind readers of an earlier result when it enables the next inference; do not repeat its full derivation, parameter listing, or conclusion merely to make every section self-contained. The notebook as a whole must still execute in order from a fresh kernel.
+- **Choose evidence for the question it answers.** Before adding a metric, table, plot, or diagnostic, identify what learners can infer from it that the existing evidence does not establish. Retain complementary checks when they address different failure modes. Multiple representations are useful when they reveal different features, not automatically because they are available. A small numerical difference may be clearer in a table than in overlapping curves; a plot may be essential when its geometry or trend supports a decision.
+- **Store only what the investigation uses.** A final-state comparison does not require a full history. Add history arrays, plotting machinery, and new library concepts when the intended analysis needs them. Keep the numerical method and experiment readable rather than replacing repetition with a general-purpose framework.
+- **Give prompts and interpretation distinct roles.** Paper work establishes a prediction, reconstruction exposes the algorithm, and interpretation explains the evidence. Self-checks should ask learners to apply or defend that reasoning. Avoid repeating the same takeaway in a transition, a table description, a summary, and another prompt unless the repetition serves a deliberate learning purpose. Preserve short explanations of unfamiliar operations where they are needed.
+- **Review the whole lesson after each substantial addition.** A locally clear section can duplicate earlier explanations or consume space needed for the final investigation. Read through the complete chapter and compare it with preceding lessons before adding more scaffolding. Remove redundant material and update dependent code, references, and prompts together. Length follows the reasoning and evidence required, not a fixed word count.
+
+These are editorial choices, not a limit of one function, metric, or figure per lesson. Necessary derivations, assumptions, independent evidence, and learner guidance remain part of a complete explanation.
+
 ### Related articulation
 
-PNM-0002 defines the learner's derive–reconstruct–specify–audit–explain cycle; this decision guides the selection and scope of the material within it. See also [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md).
+PNM-0002 defines the learner's derive–reconstruct–specify–audit–explain cycle; this decision guides the selection and scope of the material within it. See also [Notebook-first code architecture](docs/Notebook-First-Code-Architecture.md) and [Lesson 8](book/modules/02-spacetime/08-1d-diffusion.ipynb).
