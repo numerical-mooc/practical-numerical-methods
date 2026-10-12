@@ -277,8 +277,11 @@ html:not(.dark) .myst-toc-item.active {
   background-color: var(--color-red-wash);
 }
 
+/* Keep the expanded module visually tied to the selected page. The first
+ * selector follows MyST's current markup; the second supports older builds. */
+html:not(.dark) .myst-toc [data-state="open"] > .myst-toc-item > [title],
 html:not(.dark) .myst-toc .text-blue-800 {
-  color: var(--color-red);
+  color: var(--color-red-deep);
 }
 
 html:not(.dark) .myst-toc :focus-visible {
