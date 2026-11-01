@@ -25,6 +25,7 @@ project:
       children:
         - file: modules/02-spacetime/06-1d-convection.ipynb
         - file: modules/02-spacetime/07-cfl-condition.ipynb
+        - file: modules/02-spacetime/08-1d-diffusion.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
