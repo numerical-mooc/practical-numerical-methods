@@ -4,3 +4,4 @@ _build/
 __pycache__/
 book/modules/01-phugoid/phugoid.py
 output/*
+tmp/*
