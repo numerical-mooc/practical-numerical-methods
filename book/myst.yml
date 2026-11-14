@@ -27,6 +27,7 @@ project:
         - file: modules/02-spacetime/07-cfl-condition.ipynb
         - file: modules/02-spacetime/08-1d-diffusion.ipynb
         - file: modules/02-spacetime/09-1d-burgers.ipynb
+        - file: modules/02-spacetime/10-traffic-flow.ipynb
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
