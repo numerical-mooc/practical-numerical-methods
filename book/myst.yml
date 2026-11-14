@@ -28,6 +28,7 @@ project:
         - file: modules/02-spacetime/08-1d-diffusion.ipynb
         - file: modules/02-spacetime/09-1d-burgers.ipynb
         - file: modules/02-spacetime/10-traffic-flow.ipynb
+        - file: modules/02-spacetime/traffic-capstone-review.md
     - title: Appendices
       children:
         - file: appendices/python-essentials.ipynb
