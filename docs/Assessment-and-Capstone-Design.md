@@ -71,7 +71,7 @@ The capstones should not repeat the same generic prompt five times. Responsibili
 | Module | Principal agent-aware practice |
 | --- | --- |
 | 1. Phugoid motion | Compare a transparent learner implementation with an agent-proposed alternative. |
-| 2. Space and time | Delegate from a bounded numerical specification and audit the implementation. |
+| 2. Space and time | Specify and audit a bounded refinement experiment that calls a supplied solver. |
 | 3. Riding the wave | Conduct adversarial review of a solver on discontinuous and failure-prone cases. |
 | 4. Spreading out | Investigate reproducibility, sensitivity, and claims drawn from visually persuasive output. |
 | 5. Relax and hold steady | Permit optimization only after a correctness suite passes, then check that numerical behavior is preserved. |
@@ -113,32 +113,13 @@ F(\rho) = \rho V(\rho),
 
 and a forward-time/backward-space discretization of the density conservation law. It used an 11 km road, \(\rho_{\max}=250\) cars/km, 51 points, and \(\Delta t=0.001\) h. Part A used \(V_{\max}=80\) km/h, background and inflow density 10 cars/km, and a 10-point patch at 50 cars/km. Part B changed \(V_{\max}\) to 136 km/h and the background and inflow density to 20 cars/km. Learners entered six rounded minimum or average velocities at selected times.
 
-**Conceptual correction.** The revised task must distinguish vehicle speed \(V(\rho)\) from the characteristic speed
+**Implemented design (2026).** The [Traffic Flow Capstone](../book/modules/02-spacetime/10-traffic-flow.ipynb) asks which minimum and average vehicle speeds can be reported with confidence and which apparent changes in the dense patch depend on the grid and time step. It retains the two scenarios and six requested speeds. The patch occupies the same physical interval on every grid, and the average is explicitly defined over the sampled road positions.
 
-\[
-a(\rho)=\frac{dF}{d\rho}
-=V_{\max}\left(1-2\frac{\rho}{\rho_{\max}}\right).
-\]
+Learners distinguish vehicle speed \(u(\rho)\) from characteristic speed \(a(\rho)=F'(\rho)\). On paper they justify the upwind direction and CFL restriction, derive the conservative update and discrete vehicle balance, and predict a three-point step. They reconcile their notes with the worked equation and use the supplied solver. The baseline checks include a controlled defect that passes the constant-state test and fails the nonuniform vehicle balance.
 
-The legacy explanation blurred these two quantities. The sign and magnitude of \(a\), not simply the vehicle speed, determine the direction of information propagation and the appropriate upwind stencil.
+Learners specify and audit an agent-drafted refinement experiment using the supplied solver. They compare summary speeds and profiles at matched physical times on nested grids, count point updates, and halve the step at fixed spacing on a candidate grid. They independently reproduce one profile comparison and use a local overlay to interpret what the road-wide measure can conceal. The 0.1 m/s threshold applies to observed numerical sensitivity under the stated comparisons.
 
-**Capstone question.** *Can an FTBS traffic solver be trusted in both operating scenarios, and what can it support us in claiming about the evolving congestion?*
-
-**Preserve.** Keep the LWR flux, the two initial/boundary scenarios, the unit conversion, and the selected velocity summaries as baseline regression values. Restate the dense patch by its physical interval rather than by the grid-dependent slice `rho0[10:20]` so that refinement represents the same problem.
-
-**Revise.** Give the learner responsibility for specifying a reusable conservative solver and its acceptance criteria. An agent may implement the bounded solver or propose a patch, but the learner must decide whether the discretization, boundary treatment, and outputs are valid. The two scenarios should support comparison rather than six isolated answer boxes.
-
-**Minimum evidence.** Include:
-
-- a hand derivation of \(F(\rho)\), \(a(\rho)\), the conservative FTBS update, and the applicable CFL condition;
-- hand-checkable initial minimum velocities and unit conversions;
-- a calculated CFL bound for both values of \(V_{\max}\), with an explanation of why the chosen spatial bias is appropriate for the stated density range;
-- a discrete vehicle-balance check that includes boundary fluxes;
-- refinement of the grid and time step for the legacy summary quantities or a congestion-arrival quantity, while holding the physical initial condition fixed;
-- comparison of conservative flux differencing with a plausible but incorrect implementation that substitutes vehicle speed for characteristic speed or mishandles the inflow boundary; and
-- a verdict separating numerical diffusion and discretization uncertainty from limitations of the traffic model itself.
-
-The legacy summary quantities can become open regression checks once reference values are regenerated and verified. A later rubric should assess the specification, ability of the checks to detect defects, refinement evidence, and defended claim—not agreement to two decimal places alone.
+The verdict and completion rubric assess the learner's explanation of the update, verification, audit, and resolution judgment. The [companion review chapter](../book/modules/02-spacetime/traffic-capstone-review.md) offers public questions for discussing that evidence in the individual checkout.
 
 ### Module 3: Sod shock tube
 

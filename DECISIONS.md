@@ -269,7 +269,7 @@ Module 2 Lesson 1 will include a short bridge titled **Same Equations, Different
 - have learners derive, implement, and independently check both step functions; and
 - use a bounded agent task to draft an unexecuted diagnostic harness comparing smooth and discontinuous data through constant-state checks, balance residuals, grid refinement, plots, and known-defect injection.
 
-The bridge will explicitly stop before control-volume derivations, weak solutions, Rankine–Hugoniot jump conditions, shock-speed calculations, general numerical fluxes, and the traffic-flow application. Those topics remain in Module 3.
+The bridge stops before control-volume derivations, weak solutions, Rankine–Hugoniot jump conditions, shock-speed calculations, and general numerical fluxes. Those topics remain in Module 3. The [Module 2 traffic capstone](book/modules/02-spacetime/10-traffic-flow.ipynb) applies the conservative finite-difference update on an open road restricted to positive characteristic speeds. Module 3 uses traffic flow to develop the full conservation-law treatment.
 
 ### Consequences
 
